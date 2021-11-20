@@ -1,9 +1,142 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Java_practice_150_part1 {
 
     public static void main(String[] args){
-        exercise10();
+        exercise28hexatodecimal("25");
+        exercise20decimaltohexadecimal(4353);
+        exercise25octaltodecimal("10");
+        exercise23binarytohexadecimal("1101");
+        exercise24binarytooctal("111");
+        exercise26octaltobinary("7");
+        exercise27octaltohexadecimal("100");
+        exercise29hexadecimaltobinary("37");
+        exercise30hexadecimaltooctal("40");
+    }
+    public static void exercise30hexadecimaltooctal(String x){
+        int y=Integer.parseInt(x,16);
+        System.out.println(Integer.toOctalString(y));
+    }
+    public static void exercise29hexadecimaltobinary(String x){
+        int y=Integer.parseInt(x,16);
+        System.out.println(Integer.toBinaryString(y));
+    }
+    public static void exercise28hexatodecimal(String x){
+        System.out.println(Integer.parseInt(x,16));
+    }
+    public static void exercise27octaltohexadecimal(String x){
+        int y=Integer.parseInt(x,8);
+        System.out.println(Integer.toHexString(y));
+    }
+    public static void exercise26octaltobinary(String x){
+        int y=Integer.parseInt(x,8);
+        System.out.println(Integer.toBinaryString(y));
+    }
+    public static void exercise25octaltodecimal(String x){
+        System.out.println(Integer.parseInt(x,8));
+    }
+    public static void exercise24binarytooctal(String x){
+        int y=Integer.parseInt(x,2);
+        System.out.println(Integer.toOctalString(y));
+    }
+    public static void exercise23binarytohexadecimal(String x){
+        int y=Integer.parseInt(x,2);
+        System.out.println(Integer.toHexString(y));
+    }
+    public static void exercise22binarytodecimal(String x){
+        System.out.println(Integer.parseInt(x,2));
+    }
+    public static void exercise21decimaltooctalnumber(int x){
+        System.out.println(Integer.toOctalString(x));
+    }
+    public static void exercise20decimaltohexadecimal(int x){
+        System.out.println(Integer.toHexString(x));
+            }
+    public static void exercise19decimaltobinary(int x){
+        System.out.println(Integer.toBinaryString(x));
+    }
+    public static void exercise18binarynumbermultiply(){
+        String first="10";
+        String second="11";
+        int num1=Integer.parseInt(first,2);
+        int num2=Integer.parseInt(second,2);
+        int sum=num1*num2;
+        String multi=Integer.toBinaryString(sum);
+        System.out.println(multi);
+    }
+    public static void exercise17binarynumberaddition(){
+        String first="10";
+        String second="11";
+        int num1=Integer.parseInt(first,2);
+        int num2=Integer.parseInt(second,2);
+        int sum=num1+num2;
+        String summ=Integer.toBinaryString(sum);
+        System.out.println(summ);
+    }
+    public static void exercise16printface(){
+        System.out.println(" +\"\"\"\"\"+ ");
+        System.out.println("[| o o |]");
+        System.out.println(" |  ^  | ");
+        System.out.println(" | '-' | ");
+        System.out.println(" +-----+ ");
+    }
+    public static void exercise15swap(double a,double b){
+        System.out.println("original value of A is = " + a);
+        System.out.println("original value of B is = " + b);
+        double temp =a;
+        a=b;
+        b=temp;
+        System.out.println("swapped value of A is = " + a);
+        System.out.println("swapped value of B is = " + b);
+
+    }
+    public static void exercise14(){
+        System.out.println("* * * * * * ==================================");
+        System.out.println(" * * * * *  ==================================");
+        System.out.println("* * * * * * ==================================");
+        System.out.println(" * * * * *  ==================================");
+        System.out.println("* * * * * * ==================================");
+        System.out.println(" * * * * *  ==================================");
+        System.out.println("* * * * * * ==================================");
+        System.out.println(" * * * * *  ==================================");
+        System.out.println("* * * * * * ==================================");
+        System.out.println("==============================================");
+        System.out.println("==============================================");
+        System.out.println("==============================================");
+        System.out.println("==============================================");
+        System.out.println("==============================================");
+        System.out.println("==============================================");
+    }
+    public static void exercise13(double width,double height){
+        System.out.println("Perimeter of rectangle is = "+(2*(width+height)));
+        System.out.println("Area of rectngle is = "+ width*height);
+    }
+    public static void exercise12(){
+        Scanner scan=new Scanner(System.in);
+        System.out.println("the average of the numbers is = "+((scan.nextDouble()+ scan.nextDouble()+ scan.nextDouble())/3));
+    }
+    public static void exercise11(double radius){
+        System.out.println("Perimeter of the circle is = "+2*Math.PI*radius);
+        System.out.println("Area of circle ia = "+Math.PI*Math.pow(radius,2));
+    }
+    public  static String sangs(String sentence){
+        String[] strarray=sentence.split(" ");
+        String Evenword="";
+        int i=0;
+        for(String str:strarray){
+            if(str.length()%2==0){
+                i=1;
+                if (Evenword.length()<str.length()){
+                    Evenword=str;
+                }
+            }
+        }
+        if(i==0){
+            return "00";
+        }else
+        return Evenword;
     }
     public static void exercise10(){
         System.out.println(4.0*(1-(1.0/3)+(1.0/5)-(1.0/7)+(1.0/9)-(1.0/11)));
