@@ -1,11 +1,61 @@
 package hackerRank;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 public class JavaPrograms {
     public static void main(String[] args) {
-Scanner scan=new Scanner(System.in);
-System.out.println(isAnagram(scan.next(),scan.next()));
+        javaPattern();
+    }
+
+    public static void regex(String string){
+
+                String regex = "([A-Z])(.+)";
+
+                Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
+                Matcher matcher = pattern.matcher(string);
+
+                while (matcher.find()) {
+                    System.out.println("Full match: " + matcher.group(0));
+
+                    for (int i = 1; i <= matcher.groupCount(); i++) {
+                        System.out.println("Group " + i + ": " + matcher.group(i));
+                    }
+
+                }
+    }
+
+    public static void javaPattern(){
+        Scanner in = new Scanner(System.in);
+        int testCases = Integer.parseInt(in.nextLine());
+        while(testCases>0){
+            String pattern = in.nextLine();
+            //Write your code
+            try {
+                Pattern.compile(pattern);
+                System.out.println("Valid");
+            } catch (PatternSyntaxException e) {
+                System.out.println("Invalid");
+            }
+            testCases--;
+        }
+    }
+    public static void stringtoken(){
+        Scanner scan = new Scanner(System.in);
+        scan.useDelimiter("\\Z");
+        String s = scan.next().trim();
+        if (s.length() > 0) {
+            String[] tokens = s.split("[!,?._'@\\s]+");
+            System.out.println(tokens.length);
+            for(String token : tokens) {
+                System.out.println(token);
+            }
+        } else {
+            System.out.println(0);
+        }
+        scan.close();
     }
     static boolean isAnagram(String a, String b) {
         // Complete the function
@@ -46,7 +96,6 @@ System.out.println(isAnagram(scan.next(),scan.next()));
         }
 return result;
     }
-
     public static void palindrome(){
         Scanner sc=new Scanner(System.in);
         String A=sc.next();
